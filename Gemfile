@@ -40,4 +40,6 @@ gem 'jquery-rails'
 
 group :production do
   gem 'mysql2'
+#	gem 'libv8'
+#	gem 'therubyracer'
 end

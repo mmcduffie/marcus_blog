@@ -15,7 +15,7 @@ MarcusBlog::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -31,7 +31,7 @@ MarcusBlog::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -64,4 +64,16 @@ MarcusBlog::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+	path = config.paths["log"].first
+  unless File.exist? File.dirname path
+    FileUtils.mkdir_p File.dirname path
+  end
+  f = File.open path, 'w'
+  f.binmode
+  f.sync = true
+
+  config.logger = ActiveSupport::TaggedLogging.new(
+    ActiveSupport::BufferedLogger.new(f)
+  )
+  config.logger.level = ActiveSupport::BufferedLogger.const_get(config.log_level.to_s.upcase)
 end
