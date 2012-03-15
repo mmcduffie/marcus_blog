@@ -1,3 +1,29 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  width: 900px;
+	height: 6em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+}
+
+#page_content {
+  width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#post_title {
+  font-weight: bold;
+}
+
+#post_footer {
+  margin-bottom: 1em;
+}
+
+#post_timestamp {
+  margin-bottom: 1em;
+}
