@@ -1,21 +1,16 @@
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div id="post_title"><%= post.title %></div>
+  <div id="post_timestamp"><%= post.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></div>
+	<div id="post_body"><%= post.body %></div>
+	<div id="post_footer">
+	  <table>
+		  <tr>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+    </table>
+  </div>
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Post', new_post_path %>
