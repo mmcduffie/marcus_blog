@@ -2,5 +2,32 @@
   <div id="post_title"><%= post.title %></div>
   <div id="post_timestamp"><%= post.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></div>
 	<div id="post_body"><%= post.body %></div>
-	<div id="post_footer"></div>
+	<div id="post_footer">
+	  <div id="comments">
+		  Comments:<br />
+		  <% post.comments.each do |comment| %>
+			  <div class="comment_author"><%= comment.author %> posted on <%= comment.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %>:</div>
+		    <div class="comment_body"><%= comment.body %></div>
+			<% end %>
+			
+			<%= form_tag('/comments') %>
+			  <%= hidden_field_tag 'comment[post_id]', post.id %>
+
+        <div class="field">
+          <label for="comment_author">Author</label><br />
+          <input id="comment_author" name="comment[author]" size="30" type="text" />
+        </div>
+        
+				<div class="field">
+          <label for="comment_body">Body</label><br />
+          <textarea cols="40" id="comment_body" name="comment[body]" rows="20"></textarea>
+        </div>
+  
+	      <div class="actions">
+          <input name="commit" type="submit" value="Create Comment" />
+        </div>
+			</form>
+			
+		</div>
+	</div>
 <% end %>
