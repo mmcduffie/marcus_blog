@@ -8,6 +8,9 @@ header {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1em;
+	background-color: #EEEEEE;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 #page_content {
@@ -16,18 +19,23 @@ header {
 	margin-right: auto;
 }
 
-#post_title {
+.post_title {
   font-weight: bold;
 }
 
-#post_footer {
+.post_footer {
   margin-bottom: 1em;
 }
 
-#post_timestamp {
+.post_timestamp {
   margin-bottom: 1em;
 }
 
-#comments {
+.comments {
   margin-top: 1em;
+}
+
+.my_picture {
+  float: left;
+	margin-right: 1em;
 }
