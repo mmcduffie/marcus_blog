@@ -10,7 +10,7 @@
 		    <div class="comment_body"><%= comment.body %></div>
 			<% end %>
 			
-			<%= form_tag('/comments') %>
+			<%= form_tag('/comments', :remote => true) %>
 			  <%= hidden_field_tag 'comment[post_id]', post.id %>
 
         <div class="field">
