@@ -16,7 +16,7 @@
       <div id="post_<%= post.id %>_comments">
         Comments:<br />
         <% post.comments.each do |comment| %>
-          <div class="comment_author"><%= comment.author %> posted on <%= comment.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %>:</div>
+          <div class="comment_author"><%= unless comment.website.nil? then raw "<a href='" << comment.website << "'>" end %><%= comment.author %><%= unless comment.website.nil? then raw "</a>" end %> posted on <%= comment.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %>:</div>
           <div class="comment_body"><%= comment.body %></div>
         <% end %>
       </div>
@@ -25,7 +25,11 @@
         <div class="field">
           <label for="comment_author">Author</label><br />
           <input id="comment_author" name="comment[author]" size="30" type="text" />
-        </div>   
+        </div>
+        <div class="field">
+          <label for="comment_website">Author's Website (optional):</label><br />
+          <input id="comment_website" name="comment[website]" size="30" type="text" />
+        </div>  
         <div class="field">
           <label for="comment_body">Body</label><br />
           <textarea cols="40" id="comment_body" name="comment[body]" rows="20"></textarea>

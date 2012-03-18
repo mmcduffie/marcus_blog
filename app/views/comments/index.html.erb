@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+    <th>Post ID</th>
+    <th>Website</th>
     <th>Author</th>
     <th>Body</th>
     <th></th>
@@ -11,7 +13,8 @@
 
 <% @comments.each do |comment| %>
   <tr>
-	  <td><%= comment.post.id %></td>
+    <td><%= comment.post.id %></td>
+    <td><%= comment.website %></td>
     <td><%= comment.author %></td>
     <td><%= comment.body %></td>
     <td><%= link_to 'Show', comment %></td>
