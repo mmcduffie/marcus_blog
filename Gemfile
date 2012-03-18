@@ -43,3 +43,5 @@ group :production do
 #	gem 'libv8'
 #	gem 'therubyracer'
 end
+
+gem 'devise'

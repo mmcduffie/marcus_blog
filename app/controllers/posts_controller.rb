@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_admin!
   # GET /posts
   # GET /posts.json
   def index

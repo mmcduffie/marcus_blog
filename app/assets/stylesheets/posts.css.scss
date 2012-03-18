@@ -2,21 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header {
-  width: 900px;
-	height: 6em;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1em;
-	background-color: #EEEEEE;
-	padding-left: 1em;
-	padding-right: 1em;
+html, body {
+  margin: 0px;
+  padding: 0px;
 }
 
-#page_content {
+header {
   width: 900px;
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  background-color: #EEEEEE;
+  padding: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  -moz-box-shadow: 2px 2px 2px #888;
+  -webkit-box-shadow: 2px 2px 2px #888;
+  box-shadow: 2px 2px 2px #888;
+}
+
+#page_title {
+  margin-top: 0px;
+}
+
+#contact {
+  margin-top: 1em;
+}
+
+.post {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  background-color: #EEEEEE;
+  padding: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  -moz-box-shadow: 2px 2px 2px #888;
+  -webkit-box-shadow: 2px 2px 2px #888;
+  box-shadow: 2px 2px 2px #888;
 }
 
 .post_title {
@@ -37,5 +61,5 @@ header {
 
 .my_picture {
   float: left;
-	margin-right: 1em;
+  margin-right: 1em;
 }
