@@ -1,14 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @post.body %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="post">
+  <%= link_to @post.title, { :controller => "public", :action => "show", :id => @post }, :class => "post_title"%>
+  <div class="post_timestamp"><%= @post.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></div>
+  <div class="post_body"><%= @post.body %></div>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', public_index_path %>
+</div>

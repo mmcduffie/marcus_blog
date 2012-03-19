@@ -1,10 +1,11 @@
 class PublicController < ApplicationController
+  layout "public"
   def index
     @posts = Post.all
 
     respond_to do |format|
       format.html # index.html.erb
-			format.rss
+      format.rss
       format.json { render json: @posts }
     end
   end

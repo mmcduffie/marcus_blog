@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marcus McDuffie's Blog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <img src="http://www.gravatar.com/avatar/0eee261d5186d420d3bbe7c485f0b794.png" class="my_picture"/> 
+  <h1 id="page_title">Marcus McDuffie</h1>
+  <div id="bio">Marcus McDuffie is a hobbyist programmer from the Traverse City region who hacks on <a href="http://www.ruby-lang.org/en/">Ruby</a>, <a href="http://rubyonrails.org/">Rails</a>, <a href="http://www.haskell.org">Haskell</a>, <a href="http://www.lua.org/">Lua</a>, Lisp, C and whatever else he feels like.</div>
+  <div id="contact">follow me on <a href="http://www.twitter.com/MarcusEMcDuffie">Twitter</a> or check me out on <a href="http://www.facebook.com/profile.php?id=1044309214">Facebook</a>.</div>
+</header>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+  <%= yield %>
+</body>
+</html>
