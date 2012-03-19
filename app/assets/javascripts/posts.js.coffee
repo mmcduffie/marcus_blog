@@ -1,4 +1,5 @@
 $ ->
+  $('.back_button').button({ icons: {primary:'ui-icon-triangle-1-w'} })
   $('.hide_button').button({ icons: {secondary:'ui-icon-triangle-1-s'} })
   $('.post_footer :submit').button()
   $('.post_footer').hide()
@@ -22,3 +23,7 @@ $ ->
   $('.hide_button').click ->
     post_id = $(this).attr('data-post-id')
     $(".post_footer[data-post-id='" + post_id + "']").toggle()
+    if $(this).button( "option", "label" ) == "Show Comments"
+      $(this).button( "option", "label", "Hide Comments" )
+    else
+      $(this).button( "option", "label", "Show Comments" )

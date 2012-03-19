@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
+<div class="button_bar">
+  <%= link_to "Back to all posts", public_index_path, :class => "back_button" %><br />
+</div>
 <div class="post">
   <%= link_to @post.title, { :controller => "public", :action => "show", :id => @post }, :class => "post_title"%>
   <div class="post_timestamp"><%= @post.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></div>
   <div class="post_body"><%= @post.body %></div>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', public_index_path %>
 </div>
