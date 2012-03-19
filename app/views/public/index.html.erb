@@ -28,7 +28,7 @@
         </div>
         <div class="field">
           <label for="comment_website">Author's Website (optional):</label><br />
-          <input id="comment_website" name="comment[website]" data-post-id="<%= post.id %>" size="30" type="text" />
+          <input id="comment_website" name="comment[website]" data-post-id="<%= post.id %>" size="30" type="text" /><span id="post_<%= post.id %>_website_error" class="website_error"></span>
         </div>  
         <div class="field">
           <label for="comment_body">Body</label><br />

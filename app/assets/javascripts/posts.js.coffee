@@ -3,9 +3,21 @@ $ ->
   $('.post_footer :submit').button()
   $('.post_footer').hide()
   $('form[action="/public/create_comment"]').bind("ajax:beforeSend", (evt, xhr, settings) ->
-    website = $(this).find('input[name="comment[website]"]').val()
-    unless website.match(/^http|^https/)
-      alert("Website address must start with 'http:\\' or 'https:\\'")
+    $website_field = $(this).find('input[name="comment[website]"]')
+    post_id = $website_field.attr('data-post-id')
+    website = $website_field.val()
+    unless website.match(/^http|^https|^$/)
+      xhr.abort()
+      $website_field.css("background-color","#FFCCCC")
+      $('#post_' + post_id + '_website_error').text(" Please enter your website address with a http:// or https:// at the beginning.")
+    )
+  $('form[action="/public/create_comment"]').bind("ajax:complete", (evt, xhr, settings) ->
+    $website_field = $(this).find('input[name="comment[website]"]')
+    post_id = $website_field.attr('data-post-id')
+    $('form').each ->
+      $website_field.css("background-color","#FFFFFF")
+      $('#post_' + post_id + '_website_error').text("")
+      this.reset()
     )
   $('.hide_button').click ->
     post_id = $(this).attr('data-post-id')
