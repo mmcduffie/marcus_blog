@@ -8,7 +8,7 @@
 <p class="alert"><%= alert %></p>
 <% @posts.each do |post| %>
   <div class="post">
-    <div class="post_title"><%= post.title %></div>
+		<%= link_to post.title, { :controller => "public", :action => "show", :id => post }, :class => "post_title"%>
     <div class="post_timestamp"><%= post.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></div>
     <div class="post_body"><%= post.body %></div>
     <div class="hide_button_container"><a href="#" class="hide_button" data-post-id="<%= post.id %>">Show Comments</a></div>
