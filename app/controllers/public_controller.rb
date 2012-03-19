@@ -14,10 +14,8 @@ class PublicController < ApplicationController
       if @comment.save
         format.js
         format.html { redirect_to :action => 'index' }
-        format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { render action: "new" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.html { redirect_to :action => 'index' }
       end
     end
   end
