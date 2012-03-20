@@ -27,3 +27,8 @@ $ ->
       $(this).button( "option", "label", "Hide Comments" )
     else
       $(this).button( "option", "label", "Show Comments" )
+    button_icon = $(this).button( "option", "icons" ).secondary
+    if button_icon == 'ui-icon-triangle-1-s'
+      $(this).button( "option", "icons", {secondary:'ui-icon-triangle-1-n'} )
+    else
+      $(this).button( "option", "icons", {secondary:'ui-icon-triangle-1-s'} )
