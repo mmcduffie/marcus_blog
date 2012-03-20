@@ -5,8 +5,14 @@ class PublicController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.rss
       format.json { render json: @posts }
+    end
+  end
+  # This action is just for the public RSS feed.
+  def feed
+    @posts = Post.all
+    respond_to do |format|
+      format.rss
     end
   end
   def show

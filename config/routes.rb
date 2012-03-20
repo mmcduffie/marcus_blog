@@ -62,6 +62,7 @@ MarcusBlog::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   get 'public/index'
+  get 'public/feed'
   match 'public/show/:id' => 'public#show'
   post 'public/create_comment'
   root :to => 'public#index'
