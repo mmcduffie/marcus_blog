@@ -1,4 +1,5 @@
 $ ->
+  dp.SyntaxHighlighter.HighlightAll('code')
   $('.back_button').button({ icons: {primary:'ui-icon-triangle-1-w'} })
   $('.hide_button').button({ icons: {secondary:'ui-icon-triangle-1-s'} })
   $('.post_footer :submit').button()
