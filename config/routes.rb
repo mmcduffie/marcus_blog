@@ -64,6 +64,7 @@ MarcusBlog::Application.routes.draw do
   get 'public/index'
   get 'public/feed'
   match 'public/show/:id' => 'public#show'
+  match 'admin' => 'portal#index'
   post 'public/create_comment'
   root :to => 'public#index'
 end

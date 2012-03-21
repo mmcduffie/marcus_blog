@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marcus McDuffie's Blog Admin</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="admin_bar">
+	  <div class="admin_bar_button_container" id="edit_home_button_container"><%= link_to "Home", admin_path, :class => "admin_bar_button" %></div>
+    <div class="admin_bar_button_container" id="edit_posts_button_container"><%= link_to "Edit Posts", posts_path, :class => "admin_bar_button" %></div>
+    <div class="admin_bar_button_container" id="edit_comments_button_container"><%= link_to "Edit Comments", comments_path, :class => "admin_bar_button" %></div>
+		<div class="admin_bar_button_container" id="edit_back_button_container"><%= link_to "Back To Blog", root_path, :class => "admin_bar_button" %></div>
+  </div>
+  <div id="admin_portal_content">
+    <%= yield %>
+  </div>
+</body>
+</html>

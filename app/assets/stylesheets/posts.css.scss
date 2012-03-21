@@ -1,7 +1,11 @@
 html, body {
   margin: 0px;
   padding: 0px;
-	background-color: #EEEEEE;
+  background-color: #EEEEEE;
+}
+
+a:active {
+  outline: none;
 }
 
 header {
@@ -23,7 +27,11 @@ header {
 }
 
 #rss_button {
+  display: block;
+  width: 13px;
+  height: 13px;
   float: right;
+  background-color: #F7F7F7;
 }
 
 #contact {
