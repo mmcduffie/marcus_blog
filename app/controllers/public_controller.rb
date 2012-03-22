@@ -1,7 +1,7 @@
 class PublicController < ApplicationController
   layout "public"
   def index
-    @posts = Post.all
+    @posts = Post.all(:order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
