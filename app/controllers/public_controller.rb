@@ -10,7 +10,7 @@ class PublicController < ApplicationController
   end
   # This action is just for the public RSS feed.
   def feed
-    @posts = Post.all
+    @posts = Post.all(:order => "created_at DESC")
     respond_to do |format|
       format.rss
     end
