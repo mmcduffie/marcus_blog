@@ -14,7 +14,10 @@ header {
   margin-right: auto;
   margin-top: 1em;
   background-color: #F7F7F7;
-  padding: 1em;
+  padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 1em;
+	padding-bottom: 1.75em;
   -moz-border-radius: 1em;
   border-radius: 1em;
   -moz-box-shadow: 2px 2px 2px #888;
@@ -26,12 +29,22 @@ header {
   margin-top: 0px;
 }
 
-#rss_button {
-  display: block;
-  width: 13px;
+#social_buttons {
+  width: 130px;
   height: 13px;
   float: right;
   background-color: #F7F7F7;
+	margin-right: -0.5em;
+}
+
+#social_buttons a {
+  background-color: #F7F7F7;
+}
+
+.social_button {
+  display: block;
+  float: left;
+	margin-left: 0.5em;
 }
 
 #contact {
