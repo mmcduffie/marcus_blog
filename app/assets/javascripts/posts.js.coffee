@@ -21,15 +21,16 @@ $ ->
       $('#post_' + post_id + '_website_error').text("")
       this.reset()
     )
-  $('.hide_button').click ->
+  $('.hide_button').click (event) ->
     post_id = $(this).attr('data-post-id')
     $(".post_footer[data-post-id='" + post_id + "']").toggle()
-    if $(this).button( "option", "label" ) == "Show Comments"
-      $(this).button( "option", "label", "Hide Comments" )
+    if $(@).button( "option", "label" ) == "Show Comments"
+      $(@).button( "option", "label", "Hide Comments" )
     else
-      $(this).button( "option", "label", "Show Comments" )
+      $(@).button( "option", "label", "Show Comments" )
     button_icon = $(this).button( "option", "icons" ).secondary
     if button_icon == 'ui-icon-triangle-1-s'
-      $(this).button( "option", "icons", {secondary:'ui-icon-triangle-1-n'} )
+      $(@).button( "option", "icons", {secondary:'ui-icon-triangle-1-n'} )
     else
-      $(this).button( "option", "icons", {secondary:'ui-icon-triangle-1-s'} )
+      $(@).button( "option", "icons", {secondary:'ui-icon-triangle-1-s'} )
+    event.preventDefault()
