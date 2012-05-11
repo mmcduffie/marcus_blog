@@ -20,12 +20,20 @@
     <%= f.text_field :website %>
   </div>
   <div class="field">
+    <%= f.label :author_url %><br />
+    <%= f.text_field :author_url %>
+  </div>
+  <div class="field">
     <%= f.label :author %><br />
     <%= f.text_field :author %>
   </div>
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
   </div>
   <div class="actions">
     <%= f.submit %>

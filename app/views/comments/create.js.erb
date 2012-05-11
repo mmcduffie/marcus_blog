@@ -1,1 +1,1 @@
-$('#post_<%= @comment.post.id %>_comments').append("<div class='comment_author'><%= @comment.author %> posted on <%= @comment.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %>:</div><div class='comment_body'><%= @comment.body %></div>");
+$('#post_<%= @comment.post.id %>_comments').append("<div class='comment_author'><%= @comment.author %> posted on <%= @comment.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %>:</div><div class='comment_body'><%= @comment.content %></div>");

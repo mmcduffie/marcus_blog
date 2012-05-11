@@ -3,9 +3,10 @@
 <table>
   <tr>
     <th>Post ID</th>
-    <th>Website</th>
+    <th>Author URL</th>
     <th>Author</th>
-    <th>Body</th>
+    <th>Content</th>
+    <th>IP</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,9 +15,10 @@
 <% @comments.each do |comment| %>
   <tr>
     <td><%= comment.post.id %></td>
-    <td><%= comment.website %></td>
+    <td><%= comment.author_url %></td>
     <td><%= comment.author %></td>
-    <td><%= comment.body %></td>
+    <td><%= comment.content %></td>
+    <td><%= comment.user_ip %></td>
     <td><%= link_to 'Show', comment %></td>
     <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
     <td><%= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %></td>

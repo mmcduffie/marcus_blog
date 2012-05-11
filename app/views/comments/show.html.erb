@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <b>Website:</b>
-  <%= @comment.website %>
+  <b>Author Url:</b>
+  <%= @comment.author_url %>
 </p>
 
 <p>
@@ -16,10 +16,14 @@
 </p>
 
 <p>
-  <b>Body:</b>
-  <%= @comment.body %>
+  <b>Content:</b>
+  <%= @comment.content %>
 </p>
 
+<p>
+  <b>IP:</b>
+  <%= @comment.user_ip %>
+</p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>

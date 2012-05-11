@@ -42,12 +42,14 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
+    @params = params[:comment]
+    @params['user_ip'] = request.remote_ip # IP address for Akismet
+    @comment = Comment.new(@params)
 
     respond_to do |format|
       if @comment.save
         format.js
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment, notice: "Comment was successfully created." }
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render action: "new" }
