@@ -55,5 +55,8 @@ module MarcusBlog
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.rakismet.key = '12875f1c13e0'
+    config.rakismet.url = 'http://marcusmcduffie.com/'
   end
 end
