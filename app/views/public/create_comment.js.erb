@@ -1,7 +1,7 @@
 html_string = "\
-<div class='comment_author'><%= if @comment.website != "" then raw "<a href='" << @comment.website << "'>" end %>\
-<%= @comment.author %><%= if @comment.website != "" then raw "</a>" end %> posted on \
+<div class='comment_author'><%= if @comment.author_url != "" then raw "<a href='" << @comment.author_url << "'>" end %>\
+<%= @comment.author %><%= if @comment.author_url != "" then raw "</a>" end %> posted on \
 <%= @comment.created_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %>:\
-</div><div class='comment_body'><%= @comment.body %></div>\
+</div><div class='comment_content'><%= @comment.content %></div>\
 ";
 $('#post_<%= @comment.post.id %>_comments').append(html_string);
