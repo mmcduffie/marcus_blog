@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   validates_format_of :author_url, :with => URI::regexp(%w(http https)), :allow_blank => true
   def check_for_spam
-    if self.spam? == true
+    if spam?
       return false
     end
   end
