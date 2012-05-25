@@ -7,6 +7,8 @@
     <th>Author</th>
     <th>Content</th>
     <th>IP</th>
+    <th>Spam Status</th>
+    <th>Spam Message</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +21,8 @@
     <td><%= comment.author %></td>
     <td><%= comment.content %></td>
     <td><%= comment.user_ip %></td>
+    <td><%= comment.spam_status %></td>
+    <td><%= comment.spam_message %></td>
     <td><%= link_to 'Show', comment %></td>
     <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
     <td><%= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %></td>
