@@ -24,7 +24,9 @@ class PublicController < ApplicationController
     end
   end
   def create_comment
-    @comment = Comment.new(params[:comment])
+    @params = params[:comment]
+    @params['user_ip'] = request.remote_ip # IP address for Akismet
+    @comment = Comment.new(@params)
 
     respond_to do |format|
       if @comment.save
