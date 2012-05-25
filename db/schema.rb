@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511185311) do
+ActiveRecord::Schema.define(:version => 20120525175101) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -34,13 +34,15 @@ ActiveRecord::Schema.define(:version => 20120511185311) do
   create_table "comments", :force => true do |t|
     t.string   "author"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "post_id"
     t.string   "website"
     t.string   "user_ip"
     t.text     "content"
     t.string   "author_url"
+    t.boolean  "spam_status"
+    t.string   "spam_message"
   end
 
   create_table "posts", :force => true do |t|

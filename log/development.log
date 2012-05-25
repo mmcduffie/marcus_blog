@@ -12891,3 +12891,33 @@ Served asset /images/ui-icons_454545_256x240.png - 304 Not Modified (15ms)
 
 Started GET "/assets/images/ui-bg_glass_65_ffffff_1x400.png" for 127.0.0.1 at 2012-05-14 14:17:03 -0400
 Served asset /images/ui-bg_glass_65_ffffff_1x400.png - 304 Not Modified (0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePosts (20120314200204)
+Migrating to AddBodyToPosts (20120315161743)
+Migrating to AddTitleToPosts (20120315185948)
+Migrating to CreateComments (20120316120824)
+Migrating to AddPostIdToComments (20120316122014)
+Migrating to DeviseCreateAdmins (20120317203135)
+Migrating to AddWebsiteToComments (20120318140653)
+Migrating to AddUserIpToComments (20120511143809)
+Migrating to RemoveStringFromComments (20120511144519)
+Migrating to AddContentToComments (20120511185155)
+Migrating to AddAuthorUrlToComments (20120511185311)
+Migrating to AddSpamStatusToComments (20120525174853)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "comments" ADD "spam_status" boolean
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120525174853')[0m
+  [1m[35m (93.8ms)[0m  commit transaction
+Migrating to AddSpamMessageToComments (20120525175101)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (15.6ms)[0m  ALTER TABLE "comments" ADD "spam_message" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120525175101')[0m
+  [1m[35m (78.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("admins")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_admins_on_reset_password_token')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_admins_on_email')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("comments")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("posts")[0m
