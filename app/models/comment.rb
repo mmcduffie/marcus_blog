@@ -6,5 +6,8 @@ class Comment < ActiveRecord::Base
   def check_for_spam
     self.spam_status = spam?
     self.spam_message = akismet_response
+    if self.spam_status
+      return false
+    end
   end
 end
